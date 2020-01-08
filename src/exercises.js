@@ -2,11 +2,32 @@ function commonEnd(a, b) {
   if (!a || a.length === 0 || !b || b.length === 0) {
     return false;
   }
+  if (a.length < 1 || b.length < 1 ) {
+    return false;
+  }
 
-  // write your code here
-}
+  if ((a[0] === b[0]) || (a.pop() === b.pop())) {
+    return true;
+  }
+  else {
+    return false;
+  }
+};
 
 function endsMeet(values, n) {
+  let array = [];
+  if (values == null) {
+    return array;
+  }
+  if ((n >= 0) && (values.length >= n) && (values !== undefined)) {
+    let correctArray = values.pop();
+    let secondArray = values.shift();
+    return [secondArray, correctArray];
+  }
+  else {
+    return array;
+  }
+
   // write your code here
 }
 
