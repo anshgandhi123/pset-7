@@ -16,23 +16,47 @@ function commonEnd(a, b) {
 
 function endsMeet(values, n) {
   let array = [];
-  if (values == null) {
+
+  if (!values || values.length < n || !Number.isInteger(n) || n < 0) {
     return array;
-  }
-  if ((n >= 0) && (values.length >= n) && (values !== undefined)) {
-    let correctArray = values.pop();
-    let secondArray = values.shift();
-    return [secondArray, correctArray];
   }
   else {
-    return array;
+    if (n === 0) {
+      return values;
+    }
+    else {
+      for (let i = 0; i < n; i++) {
+        if (values[i] !== undefined) {
+          array.push(values[i]);
+        }
+      }
+      for (let i = n; i > 0; i--) {
+        if (values[values.length - i] !== undefined) {
+          array.push(values[values.length - i]);
+        }
+      }
+      return array;
+    }
   }
-
-  // write your code here
 }
 
 function difference(numbers) {
-  // write your code here
+
+  if (numbers == undefined) {
+    return undefined;
+  }
+ if (numbers < 1) {
+      return undefined;
+    }
+if (numbers.some(isNaN)) {
+  return undefined;
+}
+if (numbers != undefined || numbers >= 1 || !Number.isNaN(numbers)) {
+    var largest = Math.max.apply(Math, numbers);
+    var smallest = Math.min.apply(Math, numbers);
+    let value = largest - smallest;
+    return value;
+  }
 }
 
 function max(number) {
