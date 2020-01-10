@@ -1,4 +1,4 @@
-# Problem Set 7
+# Problem Set 7 
 
 It's time to put your skills to the test. This problem set focuses on programming in JavaScript. More specifically, it focuses on creating and manipulating arrays within functions.
 
@@ -182,7 +182,7 @@ Your job is the write correct code that passes each test case for every exercise
  - `everywhere` - 135 test cases
  - `consecutive` - 19 test cases
  - `balance` - 17 test cases
- - `clumps` - 16 test cases 
+ - `clumps` - 16 test cases
 
 ## Deadline
 
