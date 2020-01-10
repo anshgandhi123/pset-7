@@ -1,7 +1,7 @@
 function commonEnd(a, b) {
   if (!a || a.length === 0 || !b || b.length === 0) {
     return false;
-  } 
+  }
   if (a.length < 1 || b.length < 1 ) {
     return false;
   }
@@ -60,8 +60,20 @@ if (numbers != undefined || numbers >= 1 || !Number.isNaN(numbers)) {
 }
 
 function max(number) {
-  // write your code here
+  if (number == undefined) {
+    return undefined;
+  }
+  if (number.length >= 3 && ((number.length)/2 != 0)) {
+    return undefined;
+  }
+  if (number.some(isNaN)) {
+    return undefined;
+  }
 }
+  if(number.pop() >= number.shift()) {
+    let value = number.pop() >= number.shift()
+    return value;
+  }  
 
 function middle(values) {
   // write your code here
