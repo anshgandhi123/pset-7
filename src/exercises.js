@@ -118,14 +118,43 @@ function everywhere(values, x) {
   else if (!values.includes(x)) {
     return false;
   }
-
-
-
-
-}
+  else {
+        for (let check = values.indexOf(x); check < values.length; check++) {
+          if (values[check] === values[check + 1] && values[check + 1] !== undefined) {
+            return true;
+            break;
+          } else if (x === 0) {
+            return false;
+            break;
+          } else if (values[check] === values[check + 2] && values[check + 2] !== undefined && values[check + 1] !== values[check]) {
+            return true;
+            break;
+          } else if (values[check] === values[check + 3] && values[check + 3] !== undefined && (values[check + 1] && values[check + 2]) !== values[check + 3]) {
+            return true;
+            break;
+          } else {
+            return false;
+            break;
+          }
+        }
+    }
+  }
 
 function consecutive(numbers) {
-  // write your code here
+  if (numbers == undefined || numbers < 3 || Number.isInteger(numbers) || numbers.some(isNaN)) {
+    return false;
+  }
+  else {
+    for (let i = 1; i < numbers.length; i++) {
+      if (numbers[i-1] + 1 && (numbers[i] % 2 == 0)) {
+      i++
+      if (numbers[i-1] + 1 && (numbers[i] % 2 == 0)) {
+      return true;
+      break;
+     }
+    }
+   }
+ }
 }
 
 function balance(numbers) {
