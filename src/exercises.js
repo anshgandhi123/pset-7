@@ -60,31 +60,68 @@ if (numbers != undefined || numbers >= 1 || !Number.isNaN(numbers)) {
 }
 
 function max(number) {
-  if (number == undefined) {
+  if (number == undefined || number.length < 3 || number.some(isNaN)) {
     return undefined;
   }
-  if (number.length >= 3 && ((number.length)/2 != 0)) {
+  else if (number.length % 2 == 0) {
     return undefined;
   }
-  if (number.some(isNaN)) {
-    return undefined;
+  else {
+    let last = number[number.length - 1];
+    let middle = number[number.length - (Math.ceil(number.length / 2))];
+    let first = number[0];
+    let array = [first, middle, last]
+    let big = Math.max.apply(null, array)
+    return big;
   }
-}
-  if(number.pop() >= number.shift()) {
-    let value = number.pop() >= number.shift()
-    return value;
-  }  
+
+  }
 
 function middle(values) {
-  // write your code here
+  let array = []
+  if (values == undefined || values.length < 3) {
+    return array;
+  }
+  else if (values.length % 2 == 0) {
+    return array;
+  }
+  else {
+    let middle = values[values.length - (Math.ceil(values.length/2))]
+    let anotherMiddle = values[(values.length - 1) - (Math.ceil(values.length / 2))]
+    array.push(anotherMiddle, middle)
+    return array;
+  }
 }
 
 function increasing(numbers) {
-  // write your code here
-}
+    if (numbers == undefined || numbers.some(isNaN) || Number.isInteger(numbers) || numbers.length < 3) {
+      return false;
+    }
+    else {
+      for (let i = 1; i < numbers.length; i++) {
+       if ((numbers[i - 1] + 1) === numbers[i]) {
+         i++
+         if ((numbers[i - 1] + 1) === numbers[i]) {
+           return true;
+           break;
+         }
+       }
+      }
+     }
+     return false;
+   }
 
 function everywhere(values, x) {
-  // write your code here
+  if (values == undefined || values < 1 || x == undefined) {
+    return false;
+  }
+  else if (!values.includes(x)) {
+    return false;
+  }
+
+
+
+
 }
 
 function consecutive(numbers) {
