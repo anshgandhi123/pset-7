@@ -24,7 +24,6 @@ function endsMeet(values, n) {
     if (n === 0) {
       return values;
     }
-    else {
       for (let i = 0; i < n; i++) {
         if (values[i] !== undefined) {
           array.push(values[i]);
@@ -38,7 +37,6 @@ function endsMeet(values, n) {
       return array;
     }
   }
-}
 
 function difference(numbers) {
 
