@@ -191,7 +191,7 @@ function balance(numbers) {
     }
   }
   console.log("test");
-}
+} 
 
 function clumps(values) {
   let clump = 0;
