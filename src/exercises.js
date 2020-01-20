@@ -40,28 +40,28 @@ function endsMeet(values, n) {
 function difference(numbers) {
   if (numbers == undefined) {
     return undefined;
-  }
+  };
   if (numbers < 1) {
     return undefined;
-  }
+  };
   if (numbers.some(isNaN)) {
     return undefined;
-  }
+  };
   if (numbers != undefined || numbers >= 1 || !Number.isNaN(numbers)) {
     var largest = Math.max.apply(Math, numbers);
     var smallest = Math.min.apply(Math, numbers);
     let value = largest - smallest;
     return value;
-  }
+  };
 };
 
 function max(number) {
   if (number == undefined || number.length < 3 || number.some(isNaN)) {
     return undefined;
-  }
+  };
   else if (number.length % 2 == 0) {
     return undefined;
-  }
+  };
   else {
     let last = number[number.length - 1];
     let middle = number[number.length - (Math.ceil(number.length / 2))];
@@ -69,14 +69,14 @@ function max(number) {
     let array = [first, middle, last]
     let big = Math.max.apply(null, array)
     return big;
-  }
+  };
 };
 
 function middle(values) {
   let array = []
   if (values == undefined || values.length < 3 || values.length % 2 == 0) {
     return array;
-  }
+  };
   else {
     let index = (values.length/2)-1 + 0.5
     let secondMiddle = values[index]
@@ -86,13 +86,13 @@ function middle(values) {
     array.push(secondMiddle);
     array.push(thirdMiddle);
     return array;
-  }
+  };
 };
 
 function increasing(numbers) {
     if (numbers == undefined || numbers.some(isNaN) || Number.isInteger(numbers) || numbers.length < 3) {
       return false;
-    }
+    };
     else {
       for (let i = 1; i < numbers.length; i++) {
         if ((numbers[i - 1] + 1) === numbers[i]) {
@@ -100,45 +100,45 @@ function increasing(numbers) {
             if ((numbers[i - 1] + 1) === numbers[i]) {
               return true;
               break;
-            }
-        }
-      }
-    }
+            };
+        };
+      };
+    };
     return false;
   };
 
 function everywhere(values, x) {
   if (values == undefined || values < 1 || x == undefined) {
     return false;
-  }
+  };
   else if (!values.includes(x)) {
     return false;
-  }
+  };
   else {
     for (let check = values.indexOf(x); check < values.length; check++) {
       if (values[check] === values[check + 1] && values[check + 1] !== undefined) {
         return true;
         break;
-      }
+      };
       else if (x === 0) {
         return false;
         break;
-      }
+      };
       else if (values[check] === values[check + 2] && values[check + 2] !== undefined && values[check + 1] !== values[check]) {
         return true;
         break;
-      }
+      };
       else if (values[check] === values[check + 3] && values[check + 3] !== undefined && (values[check + 1] && values[check + 2]) !== values[check + 3]) {
         return true;
         break;
-      }
+      };
       else {
         return false;
         break;
-      }
-    }
-  }
-}
+      };
+    };
+  };
+};
 
 function consecutive(numbers) {
   let value = 0;
