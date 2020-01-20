@@ -208,7 +208,7 @@ function clumps(values) {
      }
     return clump;
   }
-} 
+}  
 
 /*
  * Exports all functions for use in external grader.js file. Do not modify.
