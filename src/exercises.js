@@ -22,7 +22,7 @@ function endsMeet(values, n) {
   }
   else {
     if (n === 0) {
-      return values;
+      return array;
     }
       for (let i = 0; i < n; i++) {
         if (values[i] !== undefined) {
@@ -77,16 +77,17 @@ function max(number) {
 
 function middle(values) {
   let array = []
-  if (values == undefined || values.length < 3) {
-    return array;
-  }
-  else if (values.length % 2 == 0) {
+  if (values == undefined || values.length < 3 || values.length % 2 == 0) {
     return array;
   }
   else {
-    let middle = values[values.length - (Math.ceil(values.length/2))]
-    let anotherMiddle = values[(values.length - 1) - (Math.ceil(values.length / 2))]
-    array.push(anotherMiddle, middle)
+    let index = (values.length/2)-1 + 0.5
+    let secondMiddle = values[index]
+    let middle = values[index - 1]
+    let thirdMiddle = values[index + 1]
+    array.push(middle);
+    array.push(secondMiddle);
+    array.push(thirdMiddle);
     return array;
   }
 }
@@ -139,29 +140,76 @@ function everywhere(values, x) {
   }
 
 function consecutive(numbers) {
-  if (numbers == undefined || numbers < 3 || Number.isInteger(numbers) || numbers.some(isNaN)) {
+  let value = 0;
+   if (numbers == undefined || numbers.length < 3 || numbers.some(isNaN) || numbers.some(Number.isInteger) === false) {
+     return false;
+   }
+   else {
+     for (let i = 0; i < numbers.length - 1; i++) {
+       if (numbers[i] % 2 === 0 && numbers[i + 1] % 2 === 0 && numbers[i + 2] % 2 === 0) {
+         value = 1;
+         break;
+       }
+       else if (numbers[i] % 2 !== 0 && numbers[i + 1] % 2 !== 0 && numbers[i + 2] % 2 !== 0) {
+         value = 1;
+         break;
+       }
+     }
+     if (value === 1) {
+       return true;
+     }
+     else {
+       return false;
+     }
+   }
+ }
+
+function balance(numbers) {
+  if (numbers == undefined || numbers.length < 2 || numbers.some(Number.isInteger) === false || numbers.some(isNaN)) {
     return false;
   }
   else {
-    for (let i = 1; i < numbers.length; i++) {
-      if (numbers[i-1] + 1 && (numbers[i] % 2 == 0)) {
-      i++
-      if (numbers[i-1] + 1 && (numbers[i] % 2 == 0)) {
-      return true;
-      break;
-     }
-    }
-   }
- }
-}
+    let values = 0
+    for (let i = 0; i < numbers.length; i++) {
+    split = i;
+    secondSplit = i + 1;
+    let sum = 0;
+    let secondSum = 0;
+    for (let j = 0; j <= split; j++) {
+      sum = sum + numbers[j];
 
-function balance(numbers) {
-  // write your code here
+    }
+    for (let k = i + 1; k <= numbers.length - 1; k++) {
+      secondSum = secondSum + numbers[k];
+    }
+    if (sum === secondSum) {
+      values = 1;
+      return true;
+    }
+  }
+  if (values !== 1) {
+    return false;
+  }
+}
   console.log("test");
 }
 
 function clumps(values) {
-  // write your code here
+  let clump = 0;
+  if (!values) {
+    return -1;
+  }
+  else {
+     for (let i = 0; i < values.length - 1; i++) {
+      if (values[i - 1] === values[i]) {
+
+      }
+      else if (values[i] === values[i + 1]) {
+        clump++;
+      }
+    }
+    return clump;
+  }
 }
 
 /*
