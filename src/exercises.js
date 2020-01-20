@@ -209,7 +209,7 @@ function clumps(values) {
       }
     }
     return clump;
-  }
+  } 
 }
 
 /*
