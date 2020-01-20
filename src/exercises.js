@@ -4,7 +4,7 @@ function commonEnd(a, b) {
   }
   if (a.length < 1 || b.length < 1 ) {
     return false;
-  } 
+  }
 
   if ((a[0] === b[0]) || (a.pop() === b.pop())) {
     return true;
@@ -16,7 +16,6 @@ function commonEnd(a, b) {
 
 function endsMeet(values, n) {
   let array = [];
-
   if (!values || values.length < n || !Number.isInteger(n) || n < 0) {
     return array;
   }
@@ -39,23 +38,22 @@ function endsMeet(values, n) {
   }
 
 function difference(numbers) {
-
   if (numbers == undefined) {
     return undefined;
   }
- if (numbers < 1) {
-      return undefined;
-    }
-if (numbers.some(isNaN)) {
-  return undefined;
-}
-if (numbers != undefined || numbers >= 1 || !Number.isNaN(numbers)) {
+  if (numbers < 1) {
+    return undefined;
+  }
+  if (numbers.some(isNaN)) {
+    return undefined;
+  }
+  if (numbers != undefined || numbers >= 1 || !Number.isNaN(numbers)) {
     var largest = Math.max.apply(Math, numbers);
     var smallest = Math.min.apply(Math, numbers);
     let value = largest - smallest;
     return value;
   }
-}
+};
 
 function max(number) {
   if (number == undefined || number.length < 3 || number.some(isNaN)) {
@@ -72,8 +70,7 @@ function max(number) {
     let big = Math.max.apply(null, array)
     return big;
   }
-
-  }
+};
 
 function middle(values) {
   let array = []
