@@ -191,7 +191,7 @@ function balance(numbers) {
     }
   }
   console.log("test");
-} 
+}
 
 function clumps(values) {
   let clump = 0;
@@ -208,7 +208,7 @@ function clumps(values) {
      }
     return clump;
   }
-}
+} 
 
 /*
  * Exports all functions for use in external grader.js file. Do not modify.
